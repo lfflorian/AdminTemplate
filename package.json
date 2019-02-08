@@ -4,6 +4,8 @@
   "description": "Plantilla de administración utilizando bootstrap 4, angularjs y Jquery",
   "main": "index.js",
   "scripts": {
+    "build": "webpack -p",
+    "dev": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lfflorian",
