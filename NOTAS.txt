@@ -1,0 +1,7 @@
+Tareas restantes para complentar la plantilla de administración:
+
+- Arreglar el error de Jquery que impide realizar las funciones del menu y entre otras
+- Agregar la libreria anguljar y dejar la prueba de que este funcionando
+- Utilizar el loader para cargar las imagenes sin importar una por una 
+- Utilizar controladores en diferentes archivos 
+
