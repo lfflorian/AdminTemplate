@@ -5,6 +5,5 @@ import 'angular';
 
 var app = angular.module('App', []);
 
-app.controller('myCtrl', function($scope) {
-    $scope.firstName= "Prueba de angujarJS";
-  });
+var myCtrl = require('./Controllers/myCtrl');
+app.controller('myCtrl', myCtrl);
