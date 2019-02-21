@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlwebpackPlugin = require('html-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var extractPlugin = new ExtractTextPlugin({
     filename: 'main.css'
@@ -84,6 +85,9 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html'
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+        new CopyWebpackPlugin([
+            {from:'src/img',to:'img'} 
+        ]), 
     ]
 }

@@ -1,5 +1,3 @@
-import '../img/sidebar-5.jpg';
-
 import '../css/main.scss';
 import 'jquery';
 import 'bootstrap';
