@@ -153,8 +153,8 @@ var lbd = {
                     }, 430);
 
 
-                    main_panel_height = jQuery('.main-panel')[0].scrollHeight;
-                    $layer = jQuery('<div class="close-layer"></div>');
+                    var main_panel_height = jQuery('.main-panel')[0].scrollHeight;
+                    var $layer = jQuery('<div class="close-layer"></div>');
                     $layer.css('height', main_panel_height + 'px');
                     $layer.appendTo(".main-panel");
 
