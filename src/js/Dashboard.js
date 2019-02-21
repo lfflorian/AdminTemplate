@@ -28,8 +28,8 @@ var mobile_menu_visible = 0,
     $sidebar,
     isWindows;
 
-$(document).ready(function() {
-    window_width = $(window).width();
+jQuery(document).ready(function() {
+    var window_width = jQuery(window).width();
 
     // check if there is an image set for the sidebar's background
     lbd.checkSidebarImage();
@@ -40,42 +40,44 @@ $(document).ready(function() {
     }
 
     //  Activate the tooltips
-    $('[rel="tooltip"]').tooltip();
+    jQuery('[rel="tooltip"]').tooltip();
 
     //      Activate regular switches
-    if ($("[data-toggle='switch']").length != 0) {
-        $("[data-toggle='switch']").bootstrapSwitch();
+    if (jQuery("[data-toggle='switch']").length != 0) {
+        jQuery("[data-toggle='switch']").bootstrapSwitch();
     }
 
-    $('.form-control').on("focus", function() {
-        $(this).parent('.input-group').addClass("input-group-focus");
+    jQuery('.form-control').on("focus", function() {
+        jQuery(this).parent('.input-group').addClass("input-group-focus");
     }).on("blur", function() {
-        $(this).parent(".input-group").removeClass("input-group-focus");
+        jQuery(this).parent(".input-group").removeClass("input-group-focus");
     });
 
     // Fixes sub-nav not working as expected on IOS
-    $('body').on('touchstart.dropdown', '.dropdown-menu', function(e) {
+    jQuery('body').on('touchstart.dropdown', '.dropdown-menu', function(e) {
         e.stopPropagation();
     });
 });
 
 // activate collapse right menu when the windows is resized
-$(window).resize(function() {
-    if ($(window).width() <= 991) {
+jQuery(window).resize(function() {
+    if (jQuery(window).width() <= 991) {
         lbd.initRightMenu();
     }
 });
 
-lbd = {
+var lbd = {
     misc: {
         navbar_menu_visible: 0
     },
     checkSidebarImage: function() {
-        $sidebar = $('.sidebar');
-        image_src = $sidebar.data('image');
+        $sidebar = jQuery('.sidebar');
+        var image_src = $sidebar.data('image');
+        //CORREGUIR EST PARTE
+        //image_src = "imagen.png";
 
         if (image_src !== undefined) {
-            sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>'
+            var sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>'
             $sidebar.append(sidebar_container);
         } else if (mobile_menu_initialized == true) {
             // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
@@ -87,42 +89,42 @@ lbd = {
     },
 
     initRightMenu: function() {
-        $sidebar_wrapper = $('.sidebar-wrapper');
+        var $sidebar_wrapper = jQuery('.sidebar-wrapper');
 
         if (!mobile_menu_initialized) {
 
-            $navbar = $('nav').find('.navbar-collapse').first().clone(true);
+            var $navbar = jQuery('nav').find('.navbar-collapse').first().clone(true);
 
-            nav_content = '';
-            mobile_menu_content = '';
+            var nav_content = '';
+            var mobile_menu_content = '';
 
             //add the content from the regular header to the mobile menu
             $navbar.children('ul').each(function() {
 
-                content_buff = $(this).html();
+                var content_buff = jQuery(this).html();
                 nav_content = nav_content + content_buff;
             });
 
             nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
 
-            $navbar_form = $('nav').find('.navbar-form').clone(true);
+            var $navbar_form = jQuery('nav').find('.navbar-form').clone(true);
 
-            $sidebar_nav = $sidebar_wrapper.find(' > .nav');
+            var $sidebar_nav = $sidebar_wrapper.find(' > .nav');
 
             // insert the navbar form before the sidebar list
-            $nav_content = $(nav_content);
+            var $nav_content = jQuery(nav_content);
             $nav_content.insertBefore($sidebar_nav);
             $navbar_form.insertBefore($nav_content);
 
-            $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
+            jQuery(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
                 event.stopPropagation();
 
             });
 
             mobile_menu_initialized = true;
         } else {
-            console.log('window with:' + $(window).width());
-            if ($(window).width() > 991) {
+            console.log('window with:' + jQuery(window).width());
+            if (jQuery(window).width() > 991) {
                 // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
                 $sidebar_wrapper.find('.navbar-form').remove();
                 $sidebar_wrapper.find('.nav-mobile-menu').remove();
@@ -132,14 +134,14 @@ lbd = {
         }
 
         if (!toggle_initialized) {
-            $toggle = $('.navbar-toggler');
+            var $toggle = jQuery('.navbar-toggler');
 
             $toggle.click(function() {
 
                 if (mobile_menu_visible == 1) {
-                    $('html').removeClass('nav-open');
+                    jQuery('html').removeClass('nav-open');
 
-                    $('.close-layer').remove();
+                    jQuery('.close-layer').remove();
                     setTimeout(function() {
                         $toggle.removeClass('toggled');
                     }, 400);
@@ -151,8 +153,8 @@ lbd = {
                     }, 430);
 
 
-                    main_panel_height = $('.main-panel')[0].scrollHeight;
-                    $layer = $('<div class="close-layer"></div>');
+                    main_panel_height = jQuery('.main-panel')[0].scrollHeight;
+                    $layer = jQuery('<div class="close-layer"></div>');
                     $layer.css('height', main_panel_height + 'px');
                     $layer.appendTo(".main-panel");
 
@@ -161,7 +163,7 @@ lbd = {
                     }, 100);
 
                     $layer.click(function() {
-                        $('html').removeClass('nav-open');
+                        jQuery('html').removeClass('nav-open');
                         mobile_menu_visible = 0;
 
                         $layer.removeClass('visible');
@@ -173,7 +175,7 @@ lbd = {
                         }, 400);
                     });
 
-                    $('html').addClass('nav-open');
+                    jQuery('html').addClass('nav-open');
                     mobile_menu_visible = 1;
 
                 }

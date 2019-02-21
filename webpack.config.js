@@ -76,8 +76,8 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             $: 'angular',
-            Angular: 'angular',
-            Jquery : 'jquery'
+            jQuery: 'jquery',
+            Angular: 'angular'
         }),
         extractPlugin,
         new HtmlwebpackPlugin({
