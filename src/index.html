@@ -10,7 +10,7 @@
 
 <body ng-app="App">
     <show-notifications>
-    <div class="wrapper" ng-controller="myCtrl">
+    <div class="wrapper">
         <div class="sidebar" data-image="../img/sidebar-5.jpg">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
@@ -143,13 +143,13 @@
                     </div>
                 </nav>
                 <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        Administrator Template
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div ng-view></div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </body>

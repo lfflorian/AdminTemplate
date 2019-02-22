@@ -87,7 +87,8 @@ module.exports = {
         }),
         new CleanWebpackPlugin(['dist']),
         new CopyWebpackPlugin([
-            {from:'src/img',to:'img'} 
+            {from:'src/img',to:'img'},
+            {from:'src/views',to:'views'} 
         ]), 
     ]
 }

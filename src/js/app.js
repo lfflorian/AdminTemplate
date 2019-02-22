@@ -4,8 +4,8 @@ import 'bootstrap';
 import './Dashboard';
 import 'angular';
 
-var app = angular.module('App', []);
+var app = require('./routes');
 
-var myCtrl = require('./Controllers/myCtrl');
-app.controller('myCtrl', myCtrl);
+var Home = require('./Controllers/HomeController');
+app.controller('HomeController', Home);
 
