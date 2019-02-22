@@ -14,5 +14,15 @@ Tareas restantes para complentar la plantilla de administración:
 
 /* 21/Febrero/2019 */
 
-- Setear el enrutador de paginas
-- Falta utilizar diferentes vistas y agregarlas con un solo plugin
++ Setear el enrutador de paginas
++ Falta utilizar diferentes vistas y agregarlas con un solo plugin
+
+
+/* 22/Febrero/2019  SE COMPLETARON LAS TAREAS FALTANTES */
+
+
+PLANTILLA ORIGINAL SE ENCUENTRA EN EL SIGUIENTE REPOSITORIO
+
+https://github.com/lfflorian/Dashboard
+
+TAMBIEN SE ENCUENTRA EN LA CUENTA DE GOOGLE DRIVE
